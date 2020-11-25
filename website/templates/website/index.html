@@ -1,10 +1,21 @@
 {% extends "website/layout.html" %}
 {% load static %}
 
+{% block script %}
+
+<script type="module" src="{% static 'website/index.js' %}"></script>
+
+{% endblock %}
+
 {% block body %}
 
-<div class="container-fluid background-azure height-100">
-    <h1 class="color-gunmetal">HELLO</h1>
+
+<canvas id="c"></canvas>
+<div id="content">
+<div>
+    <h1>Cubes-R-Us!</h1>
+    <p>We make the best cubes!</p>
+</div>
 </div>
 
 {% endblock %}
