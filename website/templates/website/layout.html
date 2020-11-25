@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+    <head>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!--
+            The above 2 meta tags *must* come first in the <head>
+            to consistently ensure proper document rendering.
+            Any other head element should come *after* these tags.
+         -->
+
+        <!-- DESCRIPTION / SEO TAGS-->
+        <meta name="description" content="Explore the world of Ryan Kimbrell's music, buy sample packs, license artwork, and check out his web development work">
+        <meta name="robots" content="index, follow">
+
+        <!-- TITLE -->
+        <title>Ryan Kimbrell - Producer | Web Developer | Artist</title>
+
+        <!-- Styles: Bootstrap and Custom CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="{% static 'website/styles.css' %}">
+
+        {% block script %}
+        {% endblock %}
+
+    </head>
+    <body>
+
+        <!-- NAVBAR -->
+        <div id="navbar">
+            <nav class="navbar navbar-expand-lg navbar-dark background-gunmetal">
+                <a class="navbar-brand text-azure" href="#">Ryan Kimbrell</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                          <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Plugins</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              Sample Packs
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                              <a class="dropdown-item" href="#">Free Packs</a>
+                              <a class="dropdown-item" href="#">Drums</a>
+                              <a class="dropdown-item" href="#">Keys</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Artwork</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Portfolio</a>
+                        </li>
+                    </ul>
+                </div>
+
+
+            </nav>
+        </div>
+
+
+        <!-- DJANGO INSERTION -->
+        {% block body %}
+        {% endblock %}
+
+        <!-- BOOTSTRAP JS IMPORTS -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+
+    </body>
+</html>
