@@ -45,36 +45,6 @@ function main() {
   // =======================================================================
   // UTILITY FUNCTIONS
 
-  // Resizes the renderer to the display size if necessary.
-  // Returns true is resized, false if not
-  function resizeRendererToDisplaySize(renderer) {
-    const canvas = renderer.domElement;
-    const width = canvas.clientWidth;
-    const height = canvas.clientHeight;
-    const needResize = canvas.width !== width || canvas.height !== height;
-    if (needResize) {
-      renderer.setSize(width, height, false);
-    }
-    return needResize;
-  }
-
-  // Updates the position of the camera based on how far you've scrolled.
-  function updateCamera(ev) {
-    const div1 = document.getElementById("div1");
-    camera.position.x = -1.5 + window.scrollY / 250.0;
-    camera.position.y = -1.5 + window.scrollY / 500.0;
-  }
-
-  // Rotates the wireframe geometry based on how far you've scrolled.
-  function rotateLine(ev) {
-    icosahedrons.forEach((line, ndx) => {
-      //const speed = 0.1 + ndx * .1;
-      //const rot = time * speed;
-      line.rotation.x = window.scrollY / 250.0;
-      line.rotation.y = window.scrollY / 250.0;
-    });
-  }
-
   // returns a random float between 0 and 1 
   // (also adds 0.1 if it's 0.0 to avoid div by 0 error)
   function randomFloat() {
@@ -90,14 +60,14 @@ function main() {
   // returns a random int between the min and max inclusive
   function randomInt(min, max) {
 
-    const min = Math.ceil(min);
-    const max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min + 1) + min);
+    const minimum = Math.ceil(min);
+    const maximum = Math.floor(max);
+    return Math.floor(Math.random() * (maximum - minimum + 1) + minimum);
 
   }
 
   // =======================================================================
-  // GEOMETRY/WIREFRAME/MESH DEFINITION
+  // GEOMETRY/MESH/WIREFRAME DEFINITIONS
 
   const radius =  1;
   const detail = 1;
@@ -166,6 +136,19 @@ function main() {
     });
     */
 
+    // Resizes the renderer to the display size if necessary.
+    // Returns true is resized, false if not
+    function resizeRendererToDisplaySize(renderer) {
+      const canvas = renderer.domElement;
+      const width = canvas.clientWidth;
+      const height = canvas.clientHeight;
+      const needResize = canvas.width !== width || canvas.height !== height;
+      if (needResize) {
+        renderer.setSize(width, height, false);
+      }
+      return needResize;
+    }
+
 
     renderer.render(scene, camera);
 
@@ -173,6 +156,23 @@ function main() {
   }
 
   requestAnimationFrame(render);
+
+  // =======================================================================
+  // ANIMATION FUNCTIONS
+  function updateCamera(ev) {
+    const div1 = document.getElementById("div1");
+    camera.position.x = -1.5 + window.scrollY / 250.0;
+    camera.position.y = -1.5 + window.scrollY / 500.0;
+  }
+
+  function rotateLine(ev) {
+    icosahedrons.forEach((line, ndx) => {
+      //const speed = 0.1 + ndx * .1;
+      //const rot = time * speed;
+      line.rotation.x = window.scrollY / 250.0;
+      line.rotation.y = window.scrollY / 250.0;
+    });
+  }
 
   // =======================================================================
   // EVENT LISTENERS FOR INTERACTIVE ANIMATION
