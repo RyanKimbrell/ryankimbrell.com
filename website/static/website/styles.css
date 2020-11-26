@@ -27,6 +27,26 @@ body {
   align-items: center;
 }
 
+.page-wrapper {
+	padding: 0px;
+	margin: 12px 48px;
+	position: absolute;
+	width: calc(100% - 2*48px);
+	word-wrap: break-word;
+}
+
+#div1 {
+    height: 300em;
+}
+
+
+/* ======================================================= */
+/* NAVBAR */
+
+nav {
+    position: absolute;
+    z-index: 3; /* CANVAS IS Z-INDEX OF 2 */
+}
 
 /* ======================================================= */
 /* Background color classes */
