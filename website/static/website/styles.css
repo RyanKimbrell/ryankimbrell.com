@@ -19,12 +19,14 @@ body {
 #content {
   font-size: 7vw;
   font-family: sans-serif;
-  text-align: center;
+  text-align: left;
   width: 100%;
   height: 100%;
   display: flex;
+  /*
   justify-content: center;
   align-items: center;
+  */
 }
 
 .page-wrapper {
@@ -45,7 +47,7 @@ body {
 
 nav {
     position: absolute;
-    z-index: 3; /* CANVAS IS Z-INDEX OF 2 */
+    z-index: 5; /* CANVAS IS Z-INDEX OF 2 */
 }
 
 /* ======================================================= */
@@ -73,6 +75,10 @@ nav {
 
 .background-gunmetal {
     background-color: #162B34;
+}
+
+.background-black {
+    background-color: 0x000000;
 }
 
 
@@ -107,4 +113,13 @@ nav {
 /* Height Classes */
 .height-100 {
     height: 100em;
+}
+
+/* ======================================================= */
+/* Z-Index Classes */
+
+.in-front {
+
+    z-index: 4;
+
 }

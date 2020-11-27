@@ -14,22 +14,29 @@ function main() {
     premultipliedAlpha: false,
     antialias: true,
   });
-  renderer.setClearColor(0x162B34, 0.5);
+  renderer.setClearColor(0x000000);
+
+  // =======================================================================
+  // SCENE
+  const scene = new THREE.Scene();
 
   // =======================================================================
   // PERSPECTIVE CAMERA
   const fov = 75;
   const aspect = 2;  // the canvas default
   const near = 0.1;
-  const far = 20;
-  const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
-  camera.position.z = 2;
-  camera.position.x = -1.5 + window.scrollY / 250.0;
-  camera.position.y = -1.5 + window.scrollY / 250.0;
+  const far = 100;
 
-  // =======================================================================
-  // SCENE
-  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
+
+  const camXOffset = 0;
+  const camYOffset = 20
+  const camZOffset = 20;
+
+
+  camera.position.z = camZOffset;
+  camera.position.x = camXOffset + window.scrollY / 250.0;
+  camera.position.y = camYOffset + window.scrollY / 250.0;
 
   // =======================================================================
   // LIGHTING
@@ -40,6 +47,29 @@ function main() {
     const light = new THREE.DirectionalLight(color, intensity);
     light.position.set(-1, 2, 4);
     scene.add(light);
+  }
+
+  // =======================================================================
+  // GRID HELPERS
+
+  const gridSize = 10;
+  const gridDivisions = 10;
+  const gridHelper = new THREE.GridHelper(gridSize, gridDivisions);
+
+  const polarGridRadius = 10;
+  const polarGridRadials = 16;
+  const polarGridCircles = 8;
+  const polarGridDivisions = 64;
+  const polarGridHelper = new THREE.PolarGridHelper(polarGridRadius, polarGridRadials, polarGridCircles, polarGridDivisions)
+
+  const gridShow = false;
+  const polar = false;
+  if (gridShow) {
+    if (polar) {
+      scene.add(polarGridHelper);
+    } else {
+      scene.add(gridHelper);
+    }
   }
 
   // =======================================================================
@@ -125,32 +155,66 @@ function main() {
   // =======================================================================
   // MESH ARRAYS
 
-
+  /*
   // ICOSAHEDRONS
   const icosahedrons = [
 
-    makeIcosahedron(1, 0, 0.75, -2, -2, -10),
-    makeIcosahedron(2, 0, 0.1, 0, -2, -5),
-    makeIcosahedron(1, 0, 0.25, 2, -2, 0),
+    makeIcosahedron(1, 0, 0.75, -8, -2, -10),
+    makeIcosahedron(2, 0, 0.1, 0, -6, -5),
+    makeIcosahedron(1, 0, 0.25, 2, -7, 0),
     makeIcosahedron(2, 0, 0.8, -2, 0, -2),
-    makeIcosahedron(1, 0, 0.5, -2, 2, -6),
-    makeIcosahedron(1, 0, 0.35, 0, 0, -14),
-    makeIcosahedron(1, 0, 0.6, 0, 2, -5),
-    makeIcosahedron(1, 0, 0.9, 2, 0, -4),
-    makeIcosahedron(2, 0, 0.24, 2, -2, -8),
-    makeIcosahedron(2, 0, 0.69, 2, 2, -10),
-    makeIcosahedron(1, 0, 0.4, 2, 2, -10),
+    makeIcosahedron(1, 0, 0.5, -6, 8, -6),
+    makeIcosahedron(1, 0, 0.35, 5, 6, -14),
+    makeIcosahedron(1, 0, 0.6, 10, 2, -5),
+    makeIcosahedron(1, 0, 0.9, 2, -6, -4),
+    makeIcosahedron(2, 0, 0.24, 4, -2, -8),
+    makeIcosahedron(2, 0, 0.69, 2, 3, -10),
+    makeIcosahedron(1, 0, 0.4, -5, 7, -10),
 
   ]
+  */
 
+  // SPIRAL OF ICOSAHEDRONS
+  const radius = 10;
+  const turns = 3;
+  const objPerTurn = 30;
 
+  const angleStep = (Math.PI * 2) / objPerTurn;
+  const heightStep = 0.5;
+
+  const icoRadius = 1;
+  const icoDetail = 0;
+
+  const geom = new THREE.IcosahedronBufferGeometry(icoRadius, icoDetail);
+  const wire = new THREE.WireframeGeometry(geom)
+
+  const icos = []
+
+  for (let i = 0; i < turns * objPerTurn; i++) {
+    let plane = new THREE.LineSegments(wire)
+
+    // position
+    plane.position.set(
+      Math.cos(angleStep * i) * radius,
+      heightStep * i,
+      Math.sin(angleStep * i) * radius
+    );
+
+    // rotation
+    plane.rotation.y = -angleStep * i;
+
+    scene.add(plane);
+    icos.push(plane);
+
+  }
+  
 
   // =======================================================================
   // RENDER FUNCTION
 
-  function render(time) {
+  function render() {
    
-    time *= 0.001;
+    
 
     if (resizeRendererToDisplaySize(renderer)) {
       const canvas = renderer.domElement;
@@ -158,14 +222,6 @@ function main() {
       camera.updateProjectionMatrix();
     }
 
-    /*
-    cubes.forEach((cube, ndx) => {
-      const speed = 0.1 + ndx * .1;
-      const rot = time * speed;
-      cube.rotation.x = rot;
-      cube.rotation.y = rot;
-    });
-    */
 
     // Resizes the renderer to the display size if necessary.
     // Returns true is resized, false if not
@@ -190,19 +246,35 @@ function main() {
 
   // =======================================================================
   // ANIMATION FUNCTIONS
+
+  // Camera moving based on scrollY location
   function updateCamera(ev) {
     const div1 = document.getElementById("div1");
-    camera.position.x = -1.5 + window.scrollY / 250.0;
-    camera.position.y = -1.5 + window.scrollY / 700.0;
+    // camera.position.x = camXOffset + window.scrollY / 250.0;
+    camera.position.y = camYOffset + window.scrollY / 700.0;
+    // camera.position.z = camYOffset + window.scrollY / 700.0
   }
 
+
+  // wireframe rotation based on scrollY location
   function rotateLine(ev) {
-    icosahedrons.forEach((line, ndx) => {
+    icos.forEach((wireframe, ndx) => {
       //const speed = 0.1 + ndx * .1;
       //const rot = time * speed;
-      line.rotation.x = ndx + window.scrollY / 250.0;
-      line.rotation.y = (ndx * 0.1) + window.scrollY / 250.0;
+      wireframe.rotation.x = ndx + window.scrollY / 250.0;
+      wireframe.rotation.y = (ndx * 0.1) + window.scrollY / 250.0;
     });
+  }
+
+  function spinMesh(wireframe, time) {
+    
+    time *= 0.001; //convert to seconds
+    const speed = 0.2;
+    const rot = time * speed;
+    wireframe.rotation.x = rot;
+    wireframe.rotation.y = rot;
+    wireframe.rotation.z = rot;
+
   }
 
   // =======================================================================
