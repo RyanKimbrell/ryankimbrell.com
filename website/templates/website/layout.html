@@ -40,19 +40,22 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
-                          <a class="nav-link" href="#">HOME<span class="sr-only">(current)</span></a>
+                          <a class="nav-link" href="{% url 'home' %}">HOME<span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">SAMPLE PACKS</a>
+                            <a class="nav-link" href="{% url 'samplepacks' %}">SAMPLE PACKS</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">ARTWORK</a>
+                            <a class="nav-link" href="{% url 'artwork' %}">ARTWORK</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">AUDIO PLUGINS</a>
+                            <a class="nav-link" href="{% url 'plugins' %}">AUDIO PLUGINS</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">PORTFOLIO</a>
+                            <a class="nav-link" href="{% url 'portfolio' %}">PORTFOLIO</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'contact' %}">CONTACT</a>
                         </li>
                     </ul>
                 </div>
