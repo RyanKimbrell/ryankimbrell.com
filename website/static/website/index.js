@@ -48,6 +48,96 @@ function main() {
     light.position.set(-1, 2, 4);
     scene.add(light);
   }
+  // =======================================================================
+  // RAYCASTING and PICKING CLASS
+  class PickHelper {
+
+    constructor(){
+
+      this.raycaster = new THREE.Raycaster();
+      this.pickedObject = null;
+      this.pickedObjectSavedColor = 0;
+
+    }
+
+    pick(normalizedPosition, scene, camera, time) {
+
+      // restore the color if the object is picked
+      //if (this.pickedObject) {
+      //  this.pickedObject.material.emissive.setHex(this.pickedObjectSavedColor);
+      //  this.pickedObject = undefined;
+      // }
+
+      // cast a ray through the frustum
+      this.raycaster.setFromCamera(normalizedPosition, camera);
+      // get the list of objects the ray intersected
+      const intersectedObjects = this.raycaster.intersectObjects(scene.children);
+      if (intersectedObjects.length) {
+        // pick the first object, it is the closest one
+        this.pickedObject = intersectedObjects[0].object;
+        // spin the object
+
+        time *= 0.001; //convert to seconds
+        const speed = 2;
+        const rot = time * speed;
+        this.pickedObject.rotation.x = rot;
+        this.pickedObject.rotation.y = rot;
+        //this.pickedObject.rotation.z = rot;
+
+      }
+
+    }
+
+  }
+  // MAKE A PICK HELPER
+  const pickHelper = new PickHelper();
+
+  // =======================================================================
+  // MOUSE PICKING
+
+  const pickPosition = {x: 0, y: 0};
+  clearPickPosition();
+
+  function getCanvasRelativePosition(event) {
+    const rect = canvas.getBoundingClientRect();
+    return {
+      x: (event.clientX - rect.left) * canvas.width  / rect.width,
+      y: (event.clientY - rect.top ) * canvas.height / rect.height,
+    };
+  }
+   
+  function setPickPosition(event) {
+    const pos = getCanvasRelativePosition(event);
+    pickPosition.x = (pos.x / canvas.width ) *  2 - 1;
+    pickPosition.y = (pos.y / canvas.height) * -2 + 1;  // note we flip Y
+  }
+   
+  function clearPickPosition() {
+    // unlike the mouse which always has a position
+    // if the user stops touching the screen we want
+    // to stop picking. For now we just pick a value
+    // unlikely to pick something
+    pickPosition.x = -100000;
+    pickPosition.y = -100000;
+  }
+
+  /*
+
+  // TOUCH SCREEN FUNCTIONALITY
+  window.addEventListener('touchstart', (event) => {
+    // prevent the window from scrolling
+    event.preventDefault();
+    setPickPosition(event.touches[0]);
+  }, {passive: false});
+   
+  window.addEventListener('touchmove', (event) => {
+    setPickPosition(event.touches[0]);
+  });
+   
+  window.addEventListener('touchend', clearPickPosition);
+
+  */
+
 
   // =======================================================================
   // GRID HELPERS
@@ -212,7 +302,7 @@ function main() {
   // =======================================================================
   // RENDER FUNCTION
 
-  function render() {
+  function render(time) {
    
     
 
@@ -236,6 +326,7 @@ function main() {
       return needResize;
     }
 
+    pickHelper.pick(pickPosition, scene, camera, time);
 
     renderer.render(scene, camera);
 
@@ -281,6 +372,9 @@ function main() {
   // EVENT LISTENERS FOR INTERACTIVE ANIMATION
   window.addEventListener("scroll", updateCamera);
   window.addEventListener("scroll", rotateLine);
+  window.addEventListener('mousemove', setPickPosition);
+  window.addEventListener('mouseout', clearPickPosition);
+  window.addEventListener('mouseleave', clearPickPosition);
 
 
 }
