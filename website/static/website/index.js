@@ -66,30 +66,61 @@ function main() {
 
   }
 
+  /* The three functions below courtesy of Codrops [© Codrops 2018](http://www.codrops.com) */
+
+  // returns a random value between a value and it's negative counterpart
+  function getRandomBetween(value) {
+    const floor = -value;
+    return floor + Math.random() * value * 2;
+  }
+  
+  // adds a little noise to each component of an array
+  function getArrayWithNoise(array, noise) {
+    return array.map(item => item + getRandomBetween(noise));
+  }
+  
+  // returns a random vlaue from the array passed in
+  function getRandomFromArray(array) {
+    return array[Math.floor(Math.random() * array.length)];
+  }
+
+
+
   // =======================================================================
   // GEOMETRY/MESH/WIREFRAME DEFINITIONS
 
-  const radius =  1;
-  const detail = 1;
-  const geometry = new THREE.IcosahedronBufferGeometry(radius, detail);
-  const cubeWireframe = new THREE.WireframeGeometry(geometry);
+  function makeIcosahedron(radius, detail, opacity, x, y, z) {
 
-  function makeInstance(wireframe, opacity, x, y, z) {
+    const icosaRadius = radius;
+    const icosaDetail = detail;
+    const icosaGeometry = new THREE.IcosahedronBufferGeometry(icosaRadius, icosaDetail);
+    
+    const icosahedron = makeWireframe(icosaGeometry, opacity, x, y ,z);
 
-    const line = new THREE.LineSegments(wireframe);
+    return icosahedron;
 
-    line.material.depthTest = false;
-    line.material.opacity = opacity;
-    line.material.transparent = false;
+  }
 
-    scene.add(line);
+  // Takes in a gemoetry, opacity setting and x, y ,z
+  // makes a wireframe, adds it to the scene and returns it
+  function makeWireframe(geometry, opacity, x, y, z) {
 
-    line.position.x = x;
-    line.position.y = y;
-    line.position.z = z;
+    const wireframeGeometry = new THREE.WireframeGeometry(geometry);
+
+    const wireframe = new THREE.LineSegments(wireframeGeometry);
+
+    wireframe.material.depthTest = false;
+    wireframe.material.opacity = opacity;
+    wireframe.material.transparent = false;
+
+    scene.add(wireframe);
+
+    wireframe.position.x = x;
+    wireframe.position.y = y;
+    wireframe.position.z = z;
 
 
-    return line;
+    return wireframe;
   }
   // =======================================================================
   // MESH ARRAYS
@@ -98,17 +129,17 @@ function main() {
   // ICOSAHEDRONS
   const icosahedrons = [
 
-    makeInstance(cubeWireframe, 0.75, -2, -2, -10),
-    makeInstance(cubeWireframe, 0.1, 0, -2, -5),
-    makeInstance(cubeWireframe, 0.25, 2, -2, 0),
-    makeInstance(cubeWireframe, 0.8, -2, 0, -2),
-    makeInstance(cubeWireframe, 0.5, -2, 2, -6),
-    makeInstance(cubeWireframe, 0.35, 0, 0, -14),
-    makeInstance(cubeWireframe, 0.6, 0, 2, -5),
-    makeInstance(cubeWireframe, 0.9, 2, 0, -4),
-    makeInstance(cubeWireframe, 0.24, 2, -2, -8),
-    makeInstance(cubeWireframe, 0.69, 2, 2, -10),
-    makeInstance(cubeWireframe, 0.4, 2, 2, -10),
+    makeIcosahedron(1, 0, 0.75, -2, -2, -10),
+    makeIcosahedron(2, 0, 0.1, 0, -2, -5),
+    makeIcosahedron(1, 0, 0.25, 2, -2, 0),
+    makeIcosahedron(2, 0, 0.8, -2, 0, -2),
+    makeIcosahedron(1, 0, 0.5, -2, 2, -6),
+    makeIcosahedron(1, 0, 0.35, 0, 0, -14),
+    makeIcosahedron(1, 0, 0.6, 0, 2, -5),
+    makeIcosahedron(1, 0, 0.9, 2, 0, -4),
+    makeIcosahedron(2, 0, 0.24, 2, -2, -8),
+    makeIcosahedron(2, 0, 0.69, 2, 2, -10),
+    makeIcosahedron(1, 0, 0.4, 2, 2, -10),
 
   ]
 
@@ -162,15 +193,15 @@ function main() {
   function updateCamera(ev) {
     const div1 = document.getElementById("div1");
     camera.position.x = -1.5 + window.scrollY / 250.0;
-    camera.position.y = -1.5 + window.scrollY / 500.0;
+    camera.position.y = -1.5 + window.scrollY / 700.0;
   }
 
   function rotateLine(ev) {
     icosahedrons.forEach((line, ndx) => {
       //const speed = 0.1 + ndx * .1;
       //const rot = time * speed;
-      line.rotation.x = window.scrollY / 250.0;
-      line.rotation.y = window.scrollY / 250.0;
+      line.rotation.x = ndx + window.scrollY / 250.0;
+      line.rotation.y = (ndx * 0.1) + window.scrollY / 250.0;
     });
   }
 
