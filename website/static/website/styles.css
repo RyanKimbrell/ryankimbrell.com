@@ -138,14 +138,14 @@ nav {
 }
 
 /* ======================================================= */
-/* Text Formatting Classes */
+/* Formatting Classes */
 
-div > h1 {
-    margin: 3em 5em;
+.navbar-padding {
+    margin-top: 10em;
 }
 
-div > h3 {
-    margin: 0em 9em;
+.navbar-padding-lg {
+    margin-top: 20em;
 }
 
 .socials {
@@ -156,6 +156,16 @@ div > h3 {
     text-align: center;
 }
 
+.justify-center {
+    justify-content: center;
+}
+
 .max-z-index {
     z-index: 9999;
+}
+
+.img-center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
