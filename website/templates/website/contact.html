@@ -1,10 +1,41 @@
 {% extends "website/layout.html" %}
 {% load static %}
 
+{% block script %}
+
+<script type="module" src="{% static 'website/contact.js' %}"></script>
+
+{% endblock %}
+
+
+
 {% block body %}
 
-<div>
-    <h1 class="text-azure">CONTACT</h1>
+<canvas id="c"></canvas>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <h1 class="text-azure">LET'S CONNECT</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <h3 class="text-azure">DM's and email are always open,
+                and I'll get back to you as soon as I can</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4">
+            <img src="" alt="">
+        </div>
+        <div class="col-4">
+            <img src="" alt="">
+        </div>
+        <div class="col-4">
+            <img src="" alt="">
+        </div>
+    </div>
 </div>
 
 
