@@ -91,6 +91,9 @@ nav {
     background-color: 0x000000;
 }
 
+.background-gray-transparent {
+    background-color: #00000056;
+}
 
 /* ======================================================= */
 /* Text color classes */
@@ -143,4 +146,16 @@ div > h1 {
 
 div > h3 {
     margin: 0em 9em;
+}
+
+.socials {
+    margin: 1em;
+}
+
+.text-align-center {
+    text-align: center;
+}
+
+.max-z-index {
+    z-index: 9999;
 }

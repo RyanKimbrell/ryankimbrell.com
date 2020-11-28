@@ -30,43 +30,47 @@
     <body>
 
         <!-- NAVBAR -->
-        <div id="navbar">
-            <nav class="navbar fixed-top navbar-dark background-black">
+        <div class="container-fluid">
+            <div class="row">
+                <div id="navbar">
+                    <nav class="navbar fixed-top navbar-dark background-gray-transparent">
 
-                <a class="navbar-brand text-azure" href="{% url 'index' %}">RYAN KIMBRELL</a>
+                        <a class="navbar-brand text-azure" href="{% url 'index' %}">RYAN KIMBRELL</a>
 
-                <button class="navbar-toggler nav-btn" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+                        <button class="navbar-toggler nav-btn" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
-                          <a class="nav-link" href="{% url 'home' %}">HOME<span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'samplepacks' %}">SAMPLE PACKS</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'artwork' %}">ARTWORK</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'plugins' %}">AUDIO PLUGINS</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'resume' %}">RESUME</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'portfolio' %}">PORTFOLIO</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'contact' %}">CONTACT</a>
-                        </li>
-                    </ul>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item active">
+                                <a class="nav-link" href="{% url 'home' %}">HOME<span class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'samplepacks' %}">SAMPLE PACKS</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'artwork' %}">ARTWORK</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'plugins' %}">AUDIO PLUGINS</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'resume' %}">RESUME</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'portfolio' %}">PORTFOLIO</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'contact' %}">CONTACT</a>
+                                </li>
+                            </ul>
+                        </div>
+
+
+                    </nav>
                 </div>
-
-
-            </nav>
+            </div>
         </div>
 
 
