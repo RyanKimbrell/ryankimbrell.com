@@ -4,6 +4,9 @@ from django.shortcuts import render
 def index(request):
     return render(request, "website/index.html")
 
+def bio(request):
+    return render(request, "website/bio.html")
+
 def samplepacks(request):
     return render(request, "website/samplepacks.html")
 
