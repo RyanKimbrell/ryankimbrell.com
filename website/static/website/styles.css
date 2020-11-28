@@ -51,6 +51,15 @@ nav {
     z-index: 5; /* CANVAS IS Z-INDEX OF 2 */
 }
 
+.nav-btn {
+    border-color: #ECFEFF !important;
+}
+
+.nav-btn:focus,.nav-btn:active {
+    outline: none !important;
+    box-shadow: none;
+ }
+
 /* ======================================================= */
 /* Background color classes */
 
@@ -123,4 +132,11 @@ nav {
 
     z-index: 4;
 
+}
+
+/* ======================================================= */
+/* Text Formatting Classes */
+
+div > h1 {
+    margin: 3em 5em;
 }

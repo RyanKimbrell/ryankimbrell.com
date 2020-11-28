@@ -12,9 +12,13 @@ def artwork(request):
 
 def plugins(request):
     return render(request, "website/plugins.html")
+
+def resume(request):
+    return render(request, "website/resume.html")
     
 def portfolio(request):
     return render(request, "website/portfolio.html")
 
 def contact(request):
     return render(request, "website/contact.html")
+    

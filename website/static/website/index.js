@@ -50,6 +50,8 @@ function main() {
   }
   // =======================================================================
   // RAYCASTING and PICKING CLASS
+  // Big thank you to three.js fundamentals for the raycasting/picking class
+  // framework (https://threejsfundamentals.org/threejs/lessons/threejs-picking.html)
   class PickHelper {
 
     constructor(){
@@ -76,7 +78,6 @@ function main() {
         // pick the first object, it is the closest one
         this.pickedObject = intersectedObjects[0].object;
         // spin the object
-
         time *= 0.001; //convert to seconds
         const speed = 2;
         const rot = time * speed;
@@ -357,16 +358,6 @@ function main() {
     });
   }
 
-  function spinMesh(wireframe, time) {
-    
-    time *= 0.001; //convert to seconds
-    const speed = 0.2;
-    const rot = time * speed;
-    wireframe.rotation.x = rot;
-    wireframe.rotation.y = rot;
-    wireframe.rotation.z = rot;
-
-  }
 
   // =======================================================================
   // EVENT LISTENERS FOR INTERACTIVE ANIMATION
