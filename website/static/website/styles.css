@@ -169,3 +169,21 @@ nav {
     margin-left: auto;
     margin-right: auto;
 }
+
+.button-spacing {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.resume-button-styling {
+    background-color: #000000;
+    border-color: #ECFEFF;
+    border-radius: 1em;
+    color: #ECFEFF
+}
+
+.resume-button:focus {
+    outline: none;
+}
