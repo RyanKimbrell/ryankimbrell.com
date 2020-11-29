@@ -1,15 +1,29 @@
 {% extends "website/layout.html" %}
 {% load static %}
 
+{% block script %}
+
+<script type="module" src="{% static 'website/resume.js' %}"></script>
+
+{% endblock %}
+
 {% block body %}
 
 <div class="container-fluid navbar-padding"></div>
 
 <div class="container-fluid">
     <div class="row">
-        <button class="resume-button button-spacing resume-button-styling" type="button"><h2 class="text-azure text-align-center">RESUME</h2></button>
-        <button class="resume-button button-spacing resume-button-styling" type="button"><h2 class="text-azure text-align-center">CV</h2></button>
+        <button id="resume-button" class="resume-button button-spacing resume-button-styling" type="button"><h2 class="text-azure text-align-center">RESUME</h2></button>
+        <button id="cv-button" class="resume-button button-spacing resume-button-styling" type="button"><h2 class="text-azure text-align-center">CV</h2></button>
     </div>
+</div>
+
+<div id="resume-container" class="container-fluid">
+    <p class="text-align-center text-azure">RESUME CONTAINER</p>
+</div>
+
+<div id="cv-container" class="container-fluid">
+    <p class="text-align-center text-azure">CV CONTAINER</p>
 </div>
 
 
