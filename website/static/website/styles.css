@@ -180,10 +180,16 @@ nav {
 .resume-button-styling {
     background-color: #000000;
     border-color: #ECFEFF;
+    border-width: 0.1em;
     border-radius: 1em;
     color: #ECFEFF
 }
 
 .resume-button:focus {
     outline: none;
+}
+
+.paragraph-margin {
+    margin-left: 5em;
+    margin-right: 5em;
 }
