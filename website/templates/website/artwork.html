@@ -1,6 +1,12 @@
 {% extends "website/layout.html" %}
 {% load static %}
 
+{% block script %}
+
+<script type="module" src="{% static 'website/artwork.js' %}"></script>
+
+{% endblock %}
+
 {% block body %}
 
 <div class="container-fluid navbar-padding"></div>
@@ -17,11 +23,183 @@
     <div class="row">
 
         <div class="col">
-            <p class="text-azure text-align-center">Please contact me at rkimbrell94@gmail.com for any licensing inquiries.</p>
+            <p class="text-azure text-align-center">Please contact me at rkimbrell94@gmail.com for any licensing inquiries  
+                or comission requests
+            </p>
         </div>
 
     </div>
    
 </div>
+
+<!-- THE MODAL -->
+<div id="myModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="imgModal">
+    <div id="caption"></div>
+</div>
+
+<!-- ARTWORK CONTAINER -->
+
+<div class="container-fluid" id="artwork">
+
+    <div class="row" id="row-5">
+
+        <div class="col d-flex justify-content-center art-piece">
+            <img id="loud-cry" class="art-piece-outside" src="{% static 'website/artwork/anime/tonytonychopper2K.png' %}" alt="Tony Tony Chopper - Ryan Kimbrell 2020">
+            <div class="artwork-overlay">
+                <div class="overlay-text">
+                    Tony Tony Chopper
+                </div>
+            </div>
+        </div>
+
+        <div class="col d-flex justify-content-center art-piece">
+            <img id="pleading" class="art-piece-middle" src="{% static 'website/artwork/logos/anomalie_logo_infinity_mirrors.png' %}" alt="Anomalie Logo - Ryan Kimbrell 2020">
+            <div class="artwork-overlay">
+                <div class="overlay-text">
+                    Anomalie Logo
+                </div>
+            </div>
+        </div>
+
+        <div class="col d-flex justify-content-center art-piece">
+            <img id="tears-of-joy" class="art-piece-outside" src="{% static 'website/artwork/anime/flyingnimbus.png' %}" alt="Flying Nimbus- Ryan Kimbrell">
+            <div class="artwork-overlay">
+                <div class="overlay-text">
+                    Flying Nimbus
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row" id="row-4">
+
+        <div class="col d-flex justify-content-center art-piece">
+            <img id="loud-cry" class="art-piece-outside" src="{% static 'website/artwork/misc/beholder.png' %}" alt="The Beholder - Ryan Kimbrell 2020">
+            <div class="artwork-overlay">
+                <div class="overlay-text">
+                    The Beholder
+                </div>
+            </div>
+        </div>
+
+        <div class="col d-flex justify-content-center art-piece">
+            <img id="pleading" class="art-piece-middle" src="{% static 'website/artwork/misc/technology_trap_HD.png' %}" alt="Technology Trap - Ryan Kimbrell 2020">
+            <div class="artwork-overlay">
+                <div class="overlay-text">
+                    Technology Trap
+                </div>
+            </div>
+        </div>
+
+        <div class="col d-flex justify-content-center art-piece">
+            <img id="tears-of-joy" class="art-piece-outside" src="{% static 'website/artwork/misc/spaceman_1.png' %}" alt="Spaceman - Ryan Kimbrell">
+            <div class="artwork-overlay">
+                <div class="overlay-text">
+                    Spaceman
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row" id="row-3">
+
+        <div class="col d-flex justify-content-center art-piece">
+            <img id="loud-cry" class="art-piece-outside" src="{% static 'website/artwork/emojis/loud_cry.png' %}" alt="Loud Cry - Ryan Kimbrell 2020">
+            <div class="artwork-overlay">
+                <div class="overlay-text">
+                    Emoji Series: Loud Cry
+                </div>
+            </div>
+        </div>
+
+        <div class="col d-flex justify-content-center art-piece">
+            <img id="pleading" class="art-piece-middle" src="{% static 'website/artwork/emojis/pleading.png' %}" alt="Pleading - Ryan Kimbrell 2020">
+            <div class="artwork-overlay">
+                <div class="overlay-text">
+                    Emoji Series: Pleading
+                </div>
+            </div>
+        </div>
+
+        <div class="col d-flex justify-content-center art-piece">
+            <img id="tears-of-joy" class="art-piece-outside" src="{% static 'website/artwork/emojis/tears_of_joy.png' %}" alt="Tears Of Joy - Ryan Kimbrell 2020">
+            <div class="artwork-overlay">
+                <div class="overlay-text">
+                    Emoji Series: Tears Of Joy
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row" id="row-2">
+
+        <div class="col d-flex justify-content-center art-piece">
+            <img id="poop" class="art-piece-outside" src="{% static 'website/artwork/emojis/poop.png' %}" alt="Poop - Ryan Kimbrell 2020">
+            <div class="artwork-overlay">
+                <div class="overlay-text">
+                    Emoji Series: Poop
+                </div>
+            </div>
+        </div>
+
+        <div class="col d-flex justify-content-center art-piece">
+            <img id="thinking" class="art-piece-middle" src="{% static 'website/artwork/emojis/thinking.png' %}" alt="Thinking - Ryan Kimbrell 2020">
+            <div class="artwork-overlay">
+                <div class="overlay-text">
+                    Emoji Series: Thinking
+                </div>
+            </div>
+        </div>
+
+        <div class="col d-flex justify-content-center art-piece">
+            <img id="tongue-out-wink" class="art-piece-outside" src="{% static 'website/artwork/emojis/tongue_out_wink.png' %}" alt="Tongue Out Wink - Ryan Kimbrell 2020">
+            <div class="artwork-overlay">
+                <div class="overlay-text">
+                    Emoji Series: Tongue Out Wink
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row" id="row-1">
+
+        <div class="col d-flex justify-content-center art-piece">
+            <img id="aubergine" class="art-piece-outside" src="{% static 'website/artwork/emojis/aubergine.png' %}" alt="Aubergine - Ryan Kimbrell 2020">
+            <div class="artwork-overlay">
+                <div class="overlay-text">
+                    Emoji Series: Aubergine
+                </div>
+            </div>
+        </div>
+
+        <div class="col d-flex justify-content-center art-piece">
+            <img id="peach" class="art-piece-middle" src="{% static 'website/artwork/emojis/peach.png' %}" alt="Peach - Ryan Kimbrell 2020">
+            <div class="artwork-overlay">
+                <div class="overlay-text">
+                    Emoji Series: Peach
+                </div>
+            </div>
+        </div>
+
+        <div class="col d-flex justify-content-center art-piece">
+            <img id="yee-naw" class="art-piece-outside" src="{% static 'website/artwork/emojis/yeenaw.png' %}" alt="Yee-Naw - Ryan Kimbrell 2020">
+            <div class="artwork-overlay">
+                <div class="overlay-text">
+                    Emoji Series: Yee-Naw
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
 
 {% endblock %}
