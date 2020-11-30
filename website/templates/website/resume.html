@@ -11,19 +11,39 @@
 
 <div class="container-fluid navbar-padding"></div>
 
+
+<!-- RESUME/CV BUTTONS -->
 <div class="container-fluid">
+
     <div class="row">
-        <button id="resume-button" class="resume-button button-spacing resume-button-styling" type="button"><h2 class="text-azure text-align-center">RESUME</h2></button>
-        <button id="cv-button" class="resume-button button-spacing resume-button-styling" type="button"><h2 class="text-azure text-align-center">CV</h2></button>
+
+        <div class="col-4 d-flex justify-content-center">
+            <button id="technical-resume-button" class="resume-button button-spacing resume-button-styling" type="button"><h2 class="text-azure text-align-center">PROGRAMMING RESUME</h2></button>
+        </div>
+
+        <div class="col-4 d-flex justify-content-center">
+            <button id="cv-button" class="resume-button button-spacing resume-button-styling" type="button"><h2 class="text-azure text-align-center">CV</h2></button>
+        </div>
+
+        <div class="col-4 d-flex justify-content-center">
+            <button id="artistic-resume-button" class="resume-button button-spacing resume-button-styling" type="button"><h2 class="text-azure text-align-center">AUDIO RESUME</h2></button>
+        </div>
+
     </div>
+
 </div>
 
-<div id="resume-container" class="container-fluid">
-    <p class="text-align-center text-azure">RESUME CONTAINER</p>
+<!-- RESUME/CV CONTENT CONTAINERS -->
+<div id="technical-resume-container" class="container-fluid resume-container">
+    <iframe class="resume-pdf" src="{% static 'website/resumecv/ryan_kimbrell_programming_resume.pdf' %}"></iframe>
 </div>
 
-<div id="cv-container" class="container-fluid">
-    <p class="text-align-center text-azure">CV CONTAINER</p>
+<div id="cv-container" class="container-fluid resume-container">
+    <iframe class="resume-pdf" src="{% static 'website/resumecv/ryan_kimbrell_cv.pdf' %}"></iframe>
+</div>
+
+<div id="artistic-resume-container" class="container-fluid resume-container">
+    <iframe class="resume-pdf" src="{% static 'website/resumecv/ryan_kimbrell_audio_resume.pdf' %}"></iframe>
 </div>
 
 

@@ -6,11 +6,9 @@
 
 document.addEventListener('DOMContentLoaded', function() {
 
-    document.getElementById('resume-container').style.display = "none";
-    document.getElementById('cv-container').style.display = "none";
-
     // Form view button functionality
-    document.getElementById('resume-button').onclick = () => showRecommendationForm('resume-button');
+    document.getElementById('artistic-resume-button').onclick = () => showRecommendationForm('artistic-resume-button');
+    document.getElementById('technical-resume-button').onclick = () => showRecommendationForm('technical-resume-button');
     document.getElementById('cv-button').onclick = () => showRecommendationForm('cv-button');
 
 });
@@ -18,10 +16,20 @@ document.addEventListener('DOMContentLoaded', function() {
 function showRecommendationForm(buttonId) {
     switch(buttonId) {
 
-        case 'resume-button':
+        case 'artistic-resume-button':
+            
+            // Display the resume and hide the cv
+            document.getElementById('artistic-resume-container').style.display = 'block';
+            document.getElementById('technical-resume-container').style.display = "none";
+            document.getElementById('cv-container').style.display = "none";
+
+            break;
+
+        case 'technical-resume-button':
 
             // Display the resume and hide the cv
-            document.getElementById('resume-container').style.display = "block";
+            document.getElementById('artistic-resume-container').style.display = 'none';
+            document.getElementById('technical-resume-container').style.display = "block";
             document.getElementById('cv-container').style.display = "none";
             
             break;
@@ -29,7 +37,8 @@ function showRecommendationForm(buttonId) {
         case 'cv-button':
 
             // Display the artists input form and hide the others
-            document.getElementById('resume-container').style.display = "none";
+            document.getElementById('artistic-resume-container').style.display = 'none';
+            document.getElementById('technical-resume-container').style.display = "none";
             document.getElementById('cv-container').style.display = "block";
 
             break;
