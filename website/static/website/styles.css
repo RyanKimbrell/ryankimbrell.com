@@ -277,3 +277,12 @@ nav {
     margin-left: 5em;
     margin-right: 5em;
 }
+
+/* ======================================================= */
+/* PLUGINS VIEW CLASSES */
+
+.plugin-paragraph-margin {
+    margin-top: 10em;
+    margin-left: 5em;
+    margin-right: 5em;
+}
