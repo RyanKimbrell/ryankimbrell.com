@@ -1,11 +1,28 @@
 {% extends "website/layout.html" %}
 {% load static %}
 
+{% block script %}
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+        $(function() {
+		$('.pop').on('click', function() {
+			$('.imagepreview').attr('src', $(this).find('img').attr('src'));
+			$('#imagemodal').modal('show');   
+		});		
+    });
+
+    });
+</script>
+
+{% endblock %}
+
 {% block body %}
 
 <div class="container-fluid navbar-padding"></div>
 
 <div id="web-dev-portfolio" class="container-fluid">
+
     <div class="row">
         <div class="col">
             <h1 class="text-azure text-align-center">WEB DEVELOPMENT PORTFOLIO</h1>
@@ -26,13 +43,64 @@
                 they love to listen to, and to create big playlists based off of user-seeded recommendations. 
                 It utilizes Python/Django with SQL on the backend, and is served on the front-end using a 
                 combination of Django and JavaScript, and styled with a combination of my own custom CSS and bootstrap. 
+                Interacts and organizes data pulled from Spotify's Web API and uses OAuth to gather user credentials.
             </p>
         </div>
     </div>
 
-    <div id="spotify-tools-pics" class="row">
+    <!--MODAL STUFF-->
+    <!--PICS-->
+    <div id="spotify-tools-pics" class="row navbar-padding-sm">
         <div class="col">
-            <img>
+            <a href="#" class="pop">
+                <img src="{% static 'website/images/spotifytools/landing_page.png' %}" style="width:100%">
+            </a>
+        </div>
+        <div class="col">
+            <a href="#" class="pop">
+                <img src="{% static 'website/images/spotifytools/track_info.png' %}" style="width:100%">
+            </a>
+        </div>
+        <div class="col">
+            <a href="#" class="pop">
+                <img src="{% static 'website/images/spotifytools/recommendations.png' %}" style="width:100%">
+            </a>
+        </div>
+        <div class="col">
+            <a href="#" class="pop">
+                <img src="{% static 'website/images/spotifytools/your_profile.png' %}" style="width:100%">
+            </a>
+        </div>
+    </div>
+    
+    <!-- Creates the bootstrap modal where the image will appear -->
+    <div class="modal fade" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+          <div class="modal-content">              
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+              <img src="" class="imagepreview"style="width: 100%;">
+            </div>
+          </div>
+        </div>
+      </div>
+
+    
+
+<div id="3D-graphics-portfolio" class="container-fluid navbar-padding-sm">
+
+    <div class="row">
+        <div class="col">
+            <h1 class="text-azure text-align-center">3D GRAPHICS PORTFOLIO</h1>
+        </div>
+    </div>
+
+    <div id="3D-graphics-explanation" class="row">
+        <div class="col">
+            <p class="text-azure text-align-center bio-text">
+                Please check out my artwork/3D Computer Graphics work in the 
+                <a href="http://127.0.0.1:8000/artwork">artwork</a> section of my website. 
+            </p>
         </div>
     </div>
 </div>

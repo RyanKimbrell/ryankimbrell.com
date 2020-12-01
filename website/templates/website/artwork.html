@@ -1,6 +1,9 @@
 {% extends "website/layout.html" %}
 {% load static %}
 
+{% block script %}
+{% endblock %}
+
 
 {% block body %}
 
@@ -34,7 +37,7 @@
     <div class="row" id="row-5">
 
         <div class="col d-flex justify-content-center art-piece">
-            <img id="loud-cry" class="art-piece-outside" src="{% static 'website/artwork/anime/tonytonychopper2K.png' %}" alt="Tony Tony Chopper - Ryan Kimbrell 2020">
+                <img id="loud-cry" class="art-piece-outside" src="{% static 'website/artwork/anime/tonytonychopper2K.png' %}" alt="Tony Tony Chopper - Ryan Kimbrell 2020">
             <div class="artwork-overlay">
                 <div class="overlay-text">
                     Tony Tony Chopper
@@ -52,7 +55,9 @@
         </div>
 
         <div class="col d-flex justify-content-center art-piece">
-            <img id="tears-of-joy" class="art-piece-outside" src="{% static 'website/artwork/anime/flyingnimbus.png' %}" alt="Flying Nimbus- Ryan Kimbrell">
+            <a href="#" class="pop">
+                <img id="tears-of-joy" class="art-piece-outside" src="{% static 'website/artwork/anime/flyingnimbus.png' %}" alt="Flying Nimbus- Ryan Kimbrell">
+            </a>
             <div class="artwork-overlay">
                 <div class="overlay-text">
                     Flying Nimbus
@@ -186,6 +191,18 @@
 
     </div>
 
+</div>
+
+<!-- Creates the bootstrap modal where the image will appear -->
+<div class="modal fade" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">              
+        <div class="modal-body">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+          <img src="" class="imagepreview"style="width: 100%;">
+        </div>
+      </div>
+    </div>
 </div>
 
 
