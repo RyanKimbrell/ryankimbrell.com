@@ -1,0 +1,288 @@
+/* ======================================================= */
+/* THREE JS CANVAS */
+
+body {
+    margin: 0;
+    background-color: #000000;
+}
+
+#c {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    /* pointer-events: none; */
+}
+
+#content {
+  font-size: 7vw;
+  font-family: sans-serif;
+  text-align: left;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  /*
+  justify-content: center;
+  align-items: center;
+  */
+}
+
+.page-wrapper {
+	padding: 0px;
+	margin: 12px 48px;
+	position: absolute;
+	width: calc(100% - 2*48px);
+	word-wrap: break-word;
+}
+
+#div1 {
+    height: 300em;
+}
+
+
+/* ======================================================= */
+/* NAVBAR */
+
+nav {
+    position: absolute;
+    z-index: 5; /* CANVAS IS Z-INDEX OF 2 */
+}
+
+.nav-btn {
+    border-color: #ECFEFF !important;
+}
+
+.nav-btn:focus,.nav-btn:active {
+    outline: none !important;
+    box-shadow: none;
+ }
+
+/* ======================================================= */
+/* Background color classes */
+
+.background-azure {
+    background-color: #ECFEFF;
+}
+
+.background-light-cyan {
+    background-color: #D4FCFF;
+}
+
+.background-magic-mint{
+    background-color: #AFF0E1;
+}
+
+.background-cadet-blue {
+    background-color: #6FA7A5;
+}
+
+.background-blue-sapphire {
+    background-color: #2D5869;
+}
+
+.background-gunmetal {
+    background-color: #162B34;
+}
+
+.background-black {
+    background-color: 0x000000;
+}
+
+.background-gray-transparent {
+    background-color: #00000056;
+}
+
+/* ======================================================= */
+/* Text color classes */
+
+.text-azure {
+    color: #ECFEFF;
+}
+
+.text-light-cyan {
+    color: #D4FCFF
+}
+
+.text-magic-mint {
+    color: #AFF0E1;
+}
+
+.text-cadet-blue {
+    color: #6FA7A5;
+}
+
+.text-blue-sapphire {
+    background-color: #2D5869;
+}
+
+.text-gunmetal {
+    background-color: #162B34;
+}
+
+/* ======================================================= */
+/* Height Classes */
+.height-100 {
+    height: 100em;
+}
+
+/* ======================================================= */
+/* Z-Index Classes */
+
+.in-front {
+
+    z-index: 4;
+
+}
+
+/* ======================================================= */
+/* Formatting Classes */
+
+.navbar-padding {
+    margin-top: 10em;
+}
+
+.navbar-padding-lg {
+    margin-top: 20em;
+}
+
+.navbar-padding-sm {
+    margin-top: 3em;
+}
+
+.socials {
+    margin: 1em;
+}
+
+.text-align-center {
+    text-align: center;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.max-z-index {
+    z-index: 9999;
+}
+
+.img-center {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.button-spacing {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.resume-button-styling {
+    background-color: #000000;
+    border-color: #ECFEFF;
+    border-width: 0.1em;
+    border-radius: 1em;
+    color: #ECFEFF
+}
+
+.resume-button:focus {
+    outline: none;
+}
+
+.paragraph-margin {
+    margin-left: 5em;
+    margin-right: 5em;
+}
+
+/* ======================================================= */
+/* Artwork Image Styling */
+
+.art-piece-outside {
+    display: inline-block;
+    margin-top: 2em;
+    margin-left: 2em;
+    margin-right: 2em;
+    width: 25em;
+    height: 25em;
+}
+
+.art-piece-middle {
+    display: inline-block;
+    margin-top: 2em;
+    width: 25em;
+    height: 25em;
+}
+
+/* ======================================================= */
+/* Artwork Animations */
+
+/* Mouse Hover Overlay */
+
+.artwork-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #00000050;
+}
+
+.art-piece:hover .artwork-overlay {
+    opacity: 1;
+}   
+
+.overlay-text {
+    color: #ECFEFF;
+    font-size: 1em;
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+  }
+
+/* ======================================================= */
+/* RESUME VIEW CLASSES */
+
+.resume-container {
+    display: none;
+    margin-top: 3em;
+}
+
+.resume-pdf {
+    width: 100%;
+    height: 75em;
+}
+
+/* ======================================================= */
+/* ABOUT ME */
+.portrait-picture {
+    display: inline-block;
+    width: 20em;
+    margin-top: 2em;
+    margin-left: 2em;
+    margin-right:2em;
+    margin-bottom: 2em;
+}
+
+.bio-text {
+    margin-left: 5em;
+    margin-right: 5em;
+}
+
+/* ======================================================= */
+/* PLUGINS VIEW CLASSES */
+
+.plugin-paragraph-margin {
+    margin-top: 10em;
+    margin-left: 5em;
+    margin-right: 5em;
+}
