@@ -267,6 +267,7 @@ nav {
 .portrait-picture {
     display: inline-block;
     height: 18em;
+    width: 10em;
     margin-top: 2em;
     margin-left: 2em;
     margin-right:2em;
