@@ -295,3 +295,11 @@ nav {
     margin: 2em;
     padding: 2em;
 }
+
+/* ======================================================= */
+/* MAILING LIST CLASSES */
+
+.mailchimp-signup {
+    position: absolute;
+    bottom: 0;
+}
