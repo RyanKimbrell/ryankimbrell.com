@@ -292,4 +292,6 @@ nav {
 
 .soundcloud-track {
     justify-content: center;
+    margin: 2em;
+    padding 2em;
 }
