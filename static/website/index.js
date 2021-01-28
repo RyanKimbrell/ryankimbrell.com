@@ -343,7 +343,7 @@ function main() {
   function updateCamera(ev) {
     const div1 = document.getElementById("div1");
     // camera.position.x = camXOffset + window.scrollY / 250.0;
-    camera.position.y = camYOffset + window.scrollY / 700.0;
+    camera.position.y = camYOffset - window.scrollY / 700.0;
     // camera.position.z = camYOffset + window.scrollY / 700.0
   }
 
