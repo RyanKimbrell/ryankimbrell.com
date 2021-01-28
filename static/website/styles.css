@@ -286,3 +286,10 @@ nav {
     margin-left: 5em;
     margin-right: 5em;
 }
+
+/* ======================================================= */
+/* MY MUSIC CLASSES */
+
+.soundcloud-track {
+    justify-content: center;
+}
