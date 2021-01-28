@@ -300,6 +300,6 @@ nav {
 /* MAILING LIST CLASSES */
 
 .mailchimp-signup {
-    position: absolute;
+    position: sticky;
     bottom: 0;
 }
