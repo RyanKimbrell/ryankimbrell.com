@@ -25,3 +25,5 @@ def portfolio(request):
 def contact(request):
     return render(request, "website/contact.html")
     
+def music(request):
+    return render(request, "website/music.html")
