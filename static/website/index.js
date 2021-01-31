@@ -353,7 +353,7 @@ function main() {
     icos.forEach((wireframe, ndx) => {
       //const speed = 0.1 + ndx * .1;
       //const rot = time * speed;
-      wireframe.rotation.x = ndx + window.scrollY / 250.0;
+      wireframe.rotation.x = (ndx * 0.5) + window.scrollY / 250.0;
       wireframe.rotation.y = (ndx * 0.1) + window.scrollY / 250.0;
     });
   }
