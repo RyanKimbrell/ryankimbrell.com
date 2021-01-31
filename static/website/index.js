@@ -302,8 +302,8 @@ function main() {
   
   // =======================================================================  
   // Orbit Controls
-  const controls = new OrbitControls(camera, canvas);
-  controls.enableDamping = true;
+  // const controls = new OrbitControls(camera, canvas);
+  // controls.enableDamping = true;
 
   // =======================================================================
   // RENDER FUNCTION
