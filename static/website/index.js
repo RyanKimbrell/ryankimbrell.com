@@ -310,7 +310,6 @@ function main() {
 
   function render(time) {
    
-    
 
     if (resizeRendererToDisplaySize(renderer)) {
       const canvas = renderer.domElement;
