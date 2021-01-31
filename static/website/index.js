@@ -30,7 +30,14 @@ function main() {
 
   const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
 
-  camera.position.set(0, 0, 0);
+  const camXOffset = 0;
+  const camYOffset = 20
+  const camZOffset = 20;
+
+
+  camera.position.z = camZOffset;
+  camera.position.x = camXOffset + window.scrollY / 250.0;
+  camera.position.y = camYOffset + window.scrollY / 250.0;
 
   // =======================================================================
   // LIGHTING
