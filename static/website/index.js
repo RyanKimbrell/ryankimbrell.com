@@ -20,10 +20,6 @@ function main() {
   // SCENE
   const scene = new THREE.Scene();
 
-  // =======================================================================  
-  // Orbit Controls
-  const controls = new OrbitControls(camera, canvas)
-  controls.enableDamping = true
 
   // =======================================================================
   // PERSPECTIVE CAMERA
@@ -304,6 +300,10 @@ function main() {
 
   }
   
+  // =======================================================================  
+  // Orbit Controls
+  const controls = new OrbitControls(camera, canvas)
+  controls.enableDamping = true
 
   // =======================================================================
   // RENDER FUNCTION
