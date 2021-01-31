@@ -1,5 +1,5 @@
 import * as THREE from './node_modules/three/build/three.module.js';
-
+import { OrbitControls } from './node_modules/three/examples/jsm/controls/OrbitControls.js'
 
 function main() {
 
@@ -19,6 +19,11 @@ function main() {
   // =======================================================================
   // SCENE
   const scene = new THREE.Scene();
+
+  // =======================================================================  
+  // Orbit Controls
+  const controls = new OrbitControls(camera, canvas)
+  controls.enableDamping = true
 
   // =======================================================================
   // PERSPECTIVE CAMERA
