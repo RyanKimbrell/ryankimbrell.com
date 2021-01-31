@@ -366,6 +366,11 @@ function main() {
   window.addEventListener('mousemove', setPickPosition);
   window.addEventListener('mouseout', clearPickPosition);
   window.addEventListener('mouseleave', clearPickPosition);
+  window.addEventListener('mousemove', () => {
+    camera.position.x -= window.clientX / 2;
+    camera.position.y -= window.clientY / 2;
+    camera.update()
+  })
 
 
 }
