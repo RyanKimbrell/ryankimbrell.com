@@ -27,3 +27,6 @@ def contact(request):
     
 def music(request):
     return render(request, "website/music.html")
+
+def galaxyhome(request):
+    return render(request, "website/galaxyhome.html")
