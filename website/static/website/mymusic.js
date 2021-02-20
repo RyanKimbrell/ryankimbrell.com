@@ -417,6 +417,7 @@ fontLoader.load('./static/website/fonts/GoodGirl_Regular.json', (font) => {
  */
 const floorGeometry = new THREE.PlaneGeometry(20, 10);
 // for ambient occlusion
+//console.log(floorGeometry);
 //floorGeometry.setAttribute('uv2', new THREE.Float32BufferAttribute(floorGeometry.attributes.uv.array, 2));
 
 const floorMaterial = matcapMaterial;
@@ -437,7 +438,7 @@ scene.add(floorMesh);
  * Desk
  */
 gltfLoader.load(
-    './models/Desk/glTF/desk.gltf',
+    './static/website/models/Desk/glTF/desk.gltf',
     (gltf) => {
 
         // convert to matcap material
@@ -732,7 +733,7 @@ const deskCubesFolder = gui.addFolder('deskCubes')
 
 // PLAY/PAUSE
 gltfLoader.load(
-    './models/PlayPauseButton/glTF/play_pause_button.gltf',
+    './static/website/models/PlayPauseButton/glTF/play_pause_button.gltf',
     (gltf) => {
 
         // convert to matcap material
@@ -769,7 +770,7 @@ gltfLoader.load(
 
 // STOP
 gltfLoader.load(
-    './models/StopButton/glTF/stop_button.gltf',
+    './static/website/models/StopButton/glTF/stop_button.gltf',
     (gltf) => {
 
         // convert to matcap material
@@ -806,7 +807,7 @@ gltfLoader.load(
 
 // NEXT TRACK (FORWARD BUTTON)
 gltfLoader.load(
-    './models/ForwardBackButton/glTF/forward_back_button.gltf',
+    './static/website/models/ForwardBackButton/glTF/forward_back_button.gltf',
     (gltf) => {
 
         // convert to matcap material
@@ -843,7 +844,7 @@ gltfLoader.load(
 
 // LAST TRACK or TRACK RESTART (BACK BUTTON)
 gltfLoader.load(
-    './models/ForwardBackButton/glTF/forward_back_button.gltf',
+    './static/website/models/ForwardBackButton/glTF/forward_back_button.gltf',
     (gltf) => {
 
         // convert to matcap material
@@ -880,7 +881,7 @@ gltfLoader.load(
 
 // Picture Frame
 gltfLoader.load(
-    './models/Photoframe/Photoframe.gltf',
+    './static/website/models/Photoframe/Photoframe.gltf',
     (gltf) => {
 
         // convert to matcap material
@@ -937,7 +938,7 @@ const deskPlantsFolder = gui.addFolder('deskPlants');
 
  // Cactus 1
 gltfLoader.load(
-    './models/Plants/cacti/cactus1.gltf',
+    './static/website/models/Plants/cacti/cactus1.gltf',
     (gltf) => {
 
         // convert material to matcap material
@@ -966,7 +967,7 @@ gltfLoader.load(
 
 // Cactus 2
 gltfLoader.load(
-    './models/Plants/cacti/cactus2.gltf',
+    './static/website/models/Plants/cacti/cactus2.gltf',
     (gltf) => {
 
         // convert material to matcap material
@@ -995,7 +996,7 @@ gltfLoader.load(
 
 // Plant
 gltfLoader.load(
-    './models/Plants/plant/plant.gltf',
+    './static/website/models/Plants/plant/plant.gltf',
     (gltf) => {
 
         // convert material to matcap material
@@ -1027,7 +1028,7 @@ const floorPlantsFolder = gui.addFolder('floorPlants');
 
 // Areca Palm
 gltfLoader.load(
-    './models/Plants/areca_palm/areca_palm.gltf',
+    './static/website/models/Plants/areca_palm/areca_palm.gltf',
     (gltf) => {
 
         // convert material to matcap material
@@ -1056,7 +1057,7 @@ gltfLoader.load(
 
 // Corn Plant
 gltfLoader.load(
-    './models/Plants/corn_plant/corn_plant.gltf',
+    './static/website/models/Plants/corn_plant/corn_plant.gltf',
     (gltf) => {
 
         // convert material to matcap material
@@ -1085,7 +1086,7 @@ gltfLoader.load(
 
 // Dracaena
 gltfLoader.load(
-    './models/Plants/dracaena/dracaena_sanderiana.gltf',
+    './static/website/models/Plants/dracaena/dracaena_sanderiana.gltf',
     (gltf) => {
 
         // convert material to matcap material
@@ -1115,7 +1116,7 @@ gltfLoader.load(
 
 // Orchid
 gltfLoader.load(
-    './models/Plants/orchid/orchid.gltf',
+    './static/website/models/Plants/orchid/orchid.gltf',
     (gltf) => {
 
         // convert material to matcap material
@@ -1149,7 +1150,7 @@ const cutePetsFolder = gui.addFolder('cutePets');
 
 // Doggy
 gltfLoader.load(
-    './models/Doggy/doggy.gltf',
+    './static/website/models/Doggy/doggy.gltf',
     (gltf) => {
 
         // convert material to matcap material
@@ -1179,7 +1180,7 @@ gltfLoader.load(
 
 // Puppy
 gltfLoader.load(
-    './models/Puppy/puppy.gltf',
+    './static/websitemodels/Puppy/puppy.gltf',
     (gltf) => {
 
         // convert material to matcap material
@@ -1210,7 +1211,7 @@ gltfLoader.load(
 
 // Kitty
 gltfLoader.load(
-    './models/Kitty/kitty.gltf',
+    './static/website/models/Kitty/kitty.gltf',
     (gltf) => {
 
         // convert material to matcap material
