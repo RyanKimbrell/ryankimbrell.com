@@ -3,8 +3,6 @@ import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 import * as dat from 'dat.gui'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
-import visualizerVertexShader from './shaders/visualizer/vertex.glsl'
-import visualizerFragmentShader from './shaders/visualizer/fragment.glsl'
 import { gsap } from 'gsap'
 
 
@@ -489,8 +487,53 @@ const spectroShader = new THREE.ShaderMaterial({
         uColorMultiplier: {value: 1.5}
 
     },
-    vertexShader: visualizerVertexShader,
-    fragmentShader: visualizerFragmentShader
+    vertexShader: `
+        uniform sampler2D uSpectroTexture;
+
+        varying vec2 vUv;
+
+        void main()
+        {
+            // Mesh Position
+            vec4 modelPosition = modelMatrix * vec4(position, 1.0);
+
+            vec4 textureColor = texture2D(uSpectroTexture, uv);
+
+            modelPosition.z += textureColor.r;
+
+            // Camera (View) Position
+            vec4 viewPosition = viewMatrix * modelPosition;
+
+            // Projection Matrix Position
+            vec4 projectedPosition = projectionMatrix * viewPosition;
+
+            gl_Position = projectedPosition;
+
+            // varyings
+            vUv = uv;
+        }
+    `,
+    fragmentShader: `
+        uniform sampler2D uSpectroTexture;
+        uniform vec3 uLowColor;
+        uniform vec3 uHighColor;
+        uniform float uColorOffset;
+        uniform float uColorMultiplier;
+        
+        varying vec2 vUv;
+        
+        void main()
+        {
+            vec4 fragmentTextureColor = texture2D(uSpectroTexture, vUv);
+        
+            float mixStrength = (fragmentTextureColor.r + uColorOffset) * uColorMultiplier;
+        
+            vec3 color = mix(uLowColor, uHighColor, mixStrength);
+        
+        
+            gl_FragColor = vec4(color, 1.0);
+        }
+    `
 });
 
 const bigSpectrogram3dLength = 7.5;
