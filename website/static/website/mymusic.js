@@ -262,7 +262,7 @@ const trackNameMeshes = [];
 const trackNameMeshesFolder = gui.addFolder('trackNameMeshes');
 
 // Space Beat
-fontLoader.load('./fonts/GoodGirl_Regular.json', (font) => {
+fontLoader.load('./static/website/fonts/GoodGirl_Regular.json', (font) => {
 
     const spaceBeatGeometry = new THREE.TextGeometry( 'Space Beat', {
 		font: font,
@@ -292,7 +292,7 @@ fontLoader.load('./fonts/GoodGirl_Regular.json', (font) => {
 });
 
 // When I Met You Again
-fontLoader.load('./fonts/GoodGirl_Regular.json', (font) => {
+fontLoader.load('./static/website/fonts/GoodGirl_Regular.json', (font) => {
 
     const whenIMetYouGeometry = new THREE.TextGeometry( 'When I Met You Again', {
 		font: font,
@@ -322,7 +322,7 @@ fontLoader.load('./fonts/GoodGirl_Regular.json', (font) => {
 });
 
 // 3AM at Hï
-fontLoader.load('./fonts/GoodGirl_Regular.json', (font) => {
+fontLoader.load('./static/website/fonts/GoodGirl_Regular.json', (font) => {
 
     const threeAMGeometry = new THREE.TextGeometry( '3AM At Hi', {
 		font: font,
@@ -353,7 +353,7 @@ fontLoader.load('./fonts/GoodGirl_Regular.json', (font) => {
 
 // Butterflies
 
-fontLoader.load('./fonts/GoodGirl_Regular.json', (font) => {
+fontLoader.load('./static/website/fonts/GoodGirl_Regular.json', (font) => {
 
     const butterfliesGeometry = new THREE.TextGeometry( 'Butterflies', {
 		font: font,
@@ -384,7 +384,7 @@ fontLoader.load('./fonts/GoodGirl_Regular.json', (font) => {
 
 // Galaxy Trip
 
-fontLoader.load('./fonts/GoodGirl_Regular.json', (font) => {
+fontLoader.load('./static/website/fonts/GoodGirl_Regular.json', (font) => {
 
     const galaxyTripGeometry = new THREE.TextGeometry( 'Galaxy Trip', {
 		font: font,
@@ -583,7 +583,7 @@ deskScreenFolder.add(deskScreen.position, 'z').min(-3).max(3).step(0.001).name('
 /**
  * "CLICK" Text
  */
-fontLoader.load('./fonts/GoodGirl_Regular.json', (font) => {
+fontLoader.load('./static/website/fonts/GoodGirl_Regular.json', (font) => {
 
     const clickHereGeometry = new THREE.TextGeometry( 'CLICK THE CUBES', {
 		font: font,
@@ -616,7 +616,7 @@ const camInstructionsMeshFolder = gui.addFolder('camInstructions');
 
 
 //Rotate Camera
-fontLoader.load('./fonts/GoodGirl_Regular.json', (font) => {
+fontLoader.load('./static/website/fonts/GoodGirl_Regular.json', (font) => {
 
     const camInstructionsRotateGeometry = new THREE.TextGeometry( 'Rotate Camera: Click + Drag', {
 		font: font,
@@ -643,7 +643,7 @@ fontLoader.load('./fonts/GoodGirl_Regular.json', (font) => {
 
 
 // Pan Camera
-fontLoader.load('./fonts/GoodGirl_Regular.json', (font) => {
+fontLoader.load('./static/website/fonts/GoodGirl_Regular.json', (font) => {
 
     const camInstructionsPanGeometry = new THREE.TextGeometry( 'Pan Camera: Shift + Click + Drag', {
 		font: font,
@@ -669,7 +669,7 @@ fontLoader.load('./fonts/GoodGirl_Regular.json', (font) => {
 });
 
 // Zoom Camera
-fontLoader.load('./fonts/GoodGirl_Regular.json', (font) => {
+fontLoader.load('./static/website/fonts/GoodGirl_Regular.json', (font) => {
 
     const camInstructionsZoomGeometry = new THREE.TextGeometry( 'Zoom Camera: Scroll', {
 		font: font,
@@ -698,7 +698,7 @@ fontLoader.load('./fonts/GoodGirl_Regular.json', (font) => {
 /**
  * Footer
  */
-fontLoader.load('./fonts/GoodGirl_Regular.json', (font) => {
+fontLoader.load('./static/website/fonts/GoodGirl_Regular.json', (font) => {
 
     const footerGeometry = new THREE.TextGeometry( 'MUSIC AND VISUAL DESIGN BY RYAN KIMBRELL', {
 		font: font,
