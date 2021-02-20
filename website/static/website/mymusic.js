@@ -1180,7 +1180,7 @@ gltfLoader.load(
 
 // Puppy
 gltfLoader.load(
-    './static/websitemodels/Puppy/puppy.gltf',
+    './static/website/models/Puppy/puppy.gltf',
     (gltf) => {
 
         // convert material to matcap material
