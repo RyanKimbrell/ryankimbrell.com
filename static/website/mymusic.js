@@ -418,7 +418,7 @@ fontLoader.load('./static/website/fonts/GoodGirl_Regular.json', (font) => {
 const floorGeometry = new THREE.PlaneGeometry(20, 10);
 // for ambient occlusion
 console.log(floorGeometry);
-floorGeometry.setAttribute('uv2', new THREE.Float32BufferAttribute(floorGeometry.attributes.uv.array, 2));
+//floorGeometry.setAttribute('uv2', new THREE.Float32BufferAttribute(floorGeometry.attributes.uv.array, 2));
 
 const floorMaterial = matcapMaterial;
 const floorMesh = new THREE.Mesh(floorGeometry, floorMaterial);
