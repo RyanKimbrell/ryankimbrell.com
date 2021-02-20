@@ -153,7 +153,6 @@ const galaxyTripContext = audioContext.createMediaElementSource(galaxyTrip);
 const analyser = audioContext.createAnalyser();
 analyser.fftSize = 256;
 const bufferLength = analyser.frequencyBinCount;
-console.log(bufferLength);
 let fftArray = new Uint8Array(bufferLength);
 
 // Analyser Connection
@@ -1390,7 +1389,7 @@ const clock = new THREE.Clock();
  * Witness Variable
  */
 
-console.log(bigSpectrogram3d.material)
+// console.log(bigSpectrogram3d.material)
 
 
 let spectrogramTimeArray = new Uint8Array(bufferLength * spectrogram3DWidth).fill(0);
