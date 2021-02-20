@@ -113,10 +113,10 @@ scene.add(overlay);
  */
 
 // Pet Picture
-const petPicture = textureLoader.load('./textures/petPicture.png');
+const petPicture = textureLoader.load('./static/website/textures/petPicture.png');
 
 // Matcaps
-const matcapRainbow = textureLoader.load('./textures/matcaps/rainbow.png');
+const matcapRainbow = textureLoader.load('./static/website/textures/matcaps/rainbow.png');
 
 
 //====================================================================
@@ -135,11 +135,11 @@ let trackIsPlaying = false;
 
 // TRACKS
 
-const spaceBeat = new Audio('./sounds/space_beat_1.mp3');
-const whenIMetYou = new Audio('./sounds/when_i_met_you_again.mp3');
-const threeAM = new Audio('./sounds/3am_at_hi.mp3');
-const butterflies = new Audio('./sounds/butterflies.mp3');
-const galaxyTrip = new Audio('./sounds/galaxy_trip.mp3');
+const spaceBeat = new Audio('./static/website/sounds/space_beat_1.mp3');
+const whenIMetYou = new Audio('./static/website/sounds/when_i_met_you_again.mp3');
+const threeAM = new Audio('./static/website/sounds/3am_at_hi.mp3');
+const butterflies = new Audio('./static/website/sounds/butterflies.mp3');
+const galaxyTrip = new Audio('./static/website/sounds/galaxy_trip.mp3');
 
 
 // Audio Context
@@ -233,7 +233,7 @@ matcapMaterial.matcap = matcapRainbow;
  */
 
 // Currently Playing Sign
-fontLoader.load('./fonts/GoodGirl_Regular.json', (font) => {
+fontLoader.load('./static/website/fonts/GoodGirl_Regular.json', (font) => {
 
     const currentlyPlayingGeometry = new THREE.TextGeometry( 'Curently Playing:', {
 		font: font,
