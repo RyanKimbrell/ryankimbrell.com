@@ -11,8 +11,8 @@ urlpatterns = [
     path("resume", views.resume, name="resume"),
     path("portfolio", views.portfolio, name="portfolio"),
     path("contact", views.contact, name="contact"),
-    path("music", views.music, name="music"),
+    path("oldmusic", views.oldmusic, name="oldmusic"),
     path("galaxyhome", views.galaxyhome, name="galaxyhome"),
-    path("mymusic", views.mymusic, name="mymusic")
+    path("music", views.music, name="music")
 
 ]

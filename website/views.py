@@ -25,11 +25,11 @@ def portfolio(request):
 def contact(request):
     return render(request, "website/contact.html")
     
-def music(request):
-    return render(request, "website/music.html")
+def oldmusic(request):
+    return render(request, "website/oldmusic.html")
 
 def galaxyhome(request):
     return render(request, "website/galaxyhome.html")
 
-def mymusic(request):
-    return render(request, "website/mymusic.html")
+def music(request):
+    return render(request, "website/music.html")
