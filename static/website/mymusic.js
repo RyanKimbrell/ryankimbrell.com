@@ -114,10 +114,10 @@ scene.add(overlay);
  */
 
 // Pet Picture
-const petPicture = textureLoader.load('/textures/petPicture.png');
+const petPicture = textureLoader.load('./textures/petPicture.png');
 
 // Matcaps
-const matcapRainbow = textureLoader.load('/textures/matcaps/rainbow.png');
+const matcapRainbow = textureLoader.load('./textures/matcaps/rainbow.png');
 
 
 //====================================================================
@@ -136,11 +136,11 @@ let trackIsPlaying = false;
 
 // TRACKS
 
-const spaceBeat = new Audio('/sounds/space_beat_1.mp3');
-const whenIMetYou = new Audio('/sounds/when_i_met_you_again.mp3');
-const threeAM = new Audio('/sounds/3am_at_hi.mp3');
-const butterflies = new Audio('/sounds/butterflies.mp3');
-const galaxyTrip = new Audio('/sounds/galaxy_trip.mp3');
+const spaceBeat = new Audio('./sounds/space_beat_1.mp3');
+const whenIMetYou = new Audio('./sounds/when_i_met_you_again.mp3');
+const threeAM = new Audio('./sounds/3am_at_hi.mp3');
+const butterflies = new Audio('./sounds/butterflies.mp3');
+const galaxyTrip = new Audio('./sounds/galaxy_trip.mp3');
 
 
 // Audio Context
@@ -235,7 +235,7 @@ matcapMaterial.matcap = matcapRainbow;
  */
 
 // Currently Playing Sign
-fontLoader.load('fonts/GoodGirl_Regular.json', (font) => {
+fontLoader.load('./fonts/GoodGirl_Regular.json', (font) => {
 
     const currentlyPlayingGeometry = new THREE.TextGeometry( 'Curently Playing:', {
 		font: font,
@@ -264,7 +264,7 @@ const trackNameMeshes = [];
 const trackNameMeshesFolder = gui.addFolder('trackNameMeshes');
 
 // Space Beat
-fontLoader.load('fonts/GoodGirl_Regular.json', (font) => {
+fontLoader.load('./fonts/GoodGirl_Regular.json', (font) => {
 
     const spaceBeatGeometry = new THREE.TextGeometry( 'Space Beat', {
 		font: font,
@@ -294,7 +294,7 @@ fontLoader.load('fonts/GoodGirl_Regular.json', (font) => {
 });
 
 // When I Met You Again
-fontLoader.load('fonts/GoodGirl_Regular.json', (font) => {
+fontLoader.load('./fonts/GoodGirl_Regular.json', (font) => {
 
     const whenIMetYouGeometry = new THREE.TextGeometry( 'When I Met You Again', {
 		font: font,
@@ -324,7 +324,7 @@ fontLoader.load('fonts/GoodGirl_Regular.json', (font) => {
 });
 
 // 3AM at Hï
-fontLoader.load('fonts/GoodGirl_Regular.json', (font) => {
+fontLoader.load('./fonts/GoodGirl_Regular.json', (font) => {
 
     const threeAMGeometry = new THREE.TextGeometry( '3AM At Hi', {
 		font: font,
@@ -355,7 +355,7 @@ fontLoader.load('fonts/GoodGirl_Regular.json', (font) => {
 
 // Butterflies
 
-fontLoader.load('fonts/GoodGirl_Regular.json', (font) => {
+fontLoader.load('./fonts/GoodGirl_Regular.json', (font) => {
 
     const butterfliesGeometry = new THREE.TextGeometry( 'Butterflies', {
 		font: font,
@@ -386,7 +386,7 @@ fontLoader.load('fonts/GoodGirl_Regular.json', (font) => {
 
 // Galaxy Trip
 
-fontLoader.load('fonts/GoodGirl_Regular.json', (font) => {
+fontLoader.load('./fonts/GoodGirl_Regular.json', (font) => {
 
     const galaxyTripGeometry = new THREE.TextGeometry( 'Galaxy Trip', {
 		font: font,
@@ -439,7 +439,7 @@ scene.add(floorMesh);
  * Desk
  */
 gltfLoader.load(
-    'models/Desk/glTF/desk.gltf',
+    './models/Desk/glTF/desk.gltf',
     (gltf) => {
 
         // convert to matcap material
@@ -585,7 +585,7 @@ deskScreenFolder.add(deskScreen.position, 'z').min(-3).max(3).step(0.001).name('
 /**
  * "CLICK" Text
  */
-fontLoader.load('fonts/GoodGirl_Regular.json', (font) => {
+fontLoader.load('./fonts/GoodGirl_Regular.json', (font) => {
 
     const clickHereGeometry = new THREE.TextGeometry( 'CLICK THE CUBES', {
 		font: font,
@@ -618,7 +618,7 @@ const camInstructionsMeshFolder = gui.addFolder('camInstructions');
 
 
 //Rotate Camera
-fontLoader.load('fonts/GoodGirl_Regular.json', (font) => {
+fontLoader.load('./fonts/GoodGirl_Regular.json', (font) => {
 
     const camInstructionsRotateGeometry = new THREE.TextGeometry( 'Rotate Camera: Click + Drag', {
 		font: font,
@@ -645,7 +645,7 @@ fontLoader.load('fonts/GoodGirl_Regular.json', (font) => {
 
 
 // Pan Camera
-fontLoader.load('fonts/GoodGirl_Regular.json', (font) => {
+fontLoader.load('./fonts/GoodGirl_Regular.json', (font) => {
 
     const camInstructionsPanGeometry = new THREE.TextGeometry( 'Pan Camera: Shift + Click + Drag', {
 		font: font,
@@ -671,7 +671,7 @@ fontLoader.load('fonts/GoodGirl_Regular.json', (font) => {
 });
 
 // Zoom Camera
-fontLoader.load('fonts/GoodGirl_Regular.json', (font) => {
+fontLoader.load('./fonts/GoodGirl_Regular.json', (font) => {
 
     const camInstructionsZoomGeometry = new THREE.TextGeometry( 'Zoom Camera: Scroll', {
 		font: font,
@@ -700,7 +700,7 @@ fontLoader.load('fonts/GoodGirl_Regular.json', (font) => {
 /**
  * Footer
  */
-fontLoader.load('fonts/GoodGirl_Regular.json', (font) => {
+fontLoader.load('./fonts/GoodGirl_Regular.json', (font) => {
 
     const footerGeometry = new THREE.TextGeometry( 'MUSIC AND VISUAL DESIGN BY RYAN KIMBRELL', {
 		font: font,
@@ -734,7 +734,7 @@ const deskCubesFolder = gui.addFolder('deskCubes')
 
 // PLAY/PAUSE
 gltfLoader.load(
-    '/models/PlayPauseButton/glTF/play_pause_button.gltf',
+    './models/PlayPauseButton/glTF/play_pause_button.gltf',
     (gltf) => {
 
         // convert to matcap material
@@ -771,7 +771,7 @@ gltfLoader.load(
 
 // STOP
 gltfLoader.load(
-    '/models/StopButton/glTF/stop_button.gltf',
+    './models/StopButton/glTF/stop_button.gltf',
     (gltf) => {
 
         // convert to matcap material
@@ -808,7 +808,7 @@ gltfLoader.load(
 
 // NEXT TRACK (FORWARD BUTTON)
 gltfLoader.load(
-    '/models/ForwardBackButton/glTF/forward_back_button.gltf',
+    './models/ForwardBackButton/glTF/forward_back_button.gltf',
     (gltf) => {
 
         // convert to matcap material
@@ -845,7 +845,7 @@ gltfLoader.load(
 
 // LAST TRACK or TRACK RESTART (BACK BUTTON)
 gltfLoader.load(
-    '/models/ForwardBackButton/glTF/forward_back_button.gltf',
+    './models/ForwardBackButton/glTF/forward_back_button.gltf',
     (gltf) => {
 
         // convert to matcap material
@@ -882,7 +882,7 @@ gltfLoader.load(
 
 // Picture Frame
 gltfLoader.load(
-    '/models/Photoframe/Photoframe.gltf',
+    './models/Photoframe/Photoframe.gltf',
     (gltf) => {
 
         // convert to matcap material
@@ -939,7 +939,7 @@ const deskPlantsFolder = gui.addFolder('deskPlants');
 
  // Cactus 1
 gltfLoader.load(
-    '/models/Plants/cacti/cactus1.gltf',
+    './models/Plants/cacti/cactus1.gltf',
     (gltf) => {
 
         // convert material to matcap material
@@ -968,7 +968,7 @@ gltfLoader.load(
 
 // Cactus 2
 gltfLoader.load(
-    '/models/Plants/cacti/cactus2.gltf',
+    './models/Plants/cacti/cactus2.gltf',
     (gltf) => {
 
         // convert material to matcap material
@@ -997,7 +997,7 @@ gltfLoader.load(
 
 // Plant
 gltfLoader.load(
-    '/models/Plants/plant/plant.gltf',
+    './models/Plants/plant/plant.gltf',
     (gltf) => {
 
         // convert material to matcap material
@@ -1029,7 +1029,7 @@ const floorPlantsFolder = gui.addFolder('floorPlants');
 
 // Areca Palm
 gltfLoader.load(
-    '/models/Plants/areca_palm/areca_palm.gltf',
+    './models/Plants/areca_palm/areca_palm.gltf',
     (gltf) => {
 
         // convert material to matcap material
@@ -1058,7 +1058,7 @@ gltfLoader.load(
 
 // Corn Plant
 gltfLoader.load(
-    '/models/Plants/corn_plant/corn_plant.gltf',
+    './models/Plants/corn_plant/corn_plant.gltf',
     (gltf) => {
 
         // convert material to matcap material
@@ -1087,7 +1087,7 @@ gltfLoader.load(
 
 // Dracaena
 gltfLoader.load(
-    '/models/Plants/dracaena/dracaena_sanderiana.gltf',
+    './models/Plants/dracaena/dracaena_sanderiana.gltf',
     (gltf) => {
 
         // convert material to matcap material
@@ -1117,7 +1117,7 @@ gltfLoader.load(
 
 // Orchid
 gltfLoader.load(
-    '/models/Plants/orchid/orchid.gltf',
+    './models/Plants/orchid/orchid.gltf',
     (gltf) => {
 
         // convert material to matcap material
@@ -1151,7 +1151,7 @@ const cutePetsFolder = gui.addFolder('cutePets');
 
 // Doggy
 gltfLoader.load(
-    '/models/Doggy/doggy.gltf',
+    './models/Doggy/doggy.gltf',
     (gltf) => {
 
         // convert material to matcap material
@@ -1181,7 +1181,7 @@ gltfLoader.load(
 
 // Puppy
 gltfLoader.load(
-    '/models/Puppy/puppy.gltf',
+    './models/Puppy/puppy.gltf',
     (gltf) => {
 
         // convert material to matcap material
@@ -1212,7 +1212,7 @@ gltfLoader.load(
 
 // Kitty
 gltfLoader.load(
-    '/models/Kitty/kitty.gltf',
+    './models/Kitty/kitty.gltf',
     (gltf) => {
 
         // convert material to matcap material
