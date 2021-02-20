@@ -30,3 +30,6 @@ def music(request):
 
 def galaxyhome(request):
     return render(request, "website/galaxyhome.html")
+
+def mymusic(request):
+    return render(request, "website/mymusic.html")

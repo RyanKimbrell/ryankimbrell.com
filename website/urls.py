@@ -12,6 +12,7 @@ urlpatterns = [
     path("portfolio", views.portfolio, name="portfolio"),
     path("contact", views.contact, name="contact"),
     path("music", views.music, name="music"),
-    path("galaxyhome", views.galaxyhome, name="galaxyhome")
+    path("galaxyhome", views.galaxyhome, name="galaxyhome"),
+    path("mymusic", views.mymusic, name="mymusic")
 
 ]
