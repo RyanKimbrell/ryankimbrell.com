@@ -1340,7 +1340,7 @@ window.addEventListener('resize', () =>
  */
 // Base camera
 const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100)
-camera.position.set(0, 2.56, 5.0);
+camera.position.set(0, 2.56, 6.0);
 // y used to be 2.56
 
 camera.rotation.y = Math.PI /2
