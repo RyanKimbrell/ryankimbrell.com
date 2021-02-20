@@ -1,0 +1,345 @@
+{
+    "asset" : {
+        "generator" : "Khronos glTF Blender I/O v1.3.48",
+        "version" : "2.0"
+    },
+    "scene" : 0,
+    "scenes" : [
+        {
+            "name" : "Scene",
+            "nodes" : [
+                0
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "mesh" : 0,
+            "name" : "Cactus 2",
+            "translation" : [
+                0.5293702483177185,
+                0.39616984128952026,
+                0
+            ]
+        }
+    ],
+    "materials" : [
+        {
+            "doubleSided" : true,
+            "emissiveFactor" : [
+                0,
+                0,
+                0
+            ],
+            "name" : "Orange flower pot",
+            "pbrMetallicRoughness" : {
+                "baseColorFactor" : [
+                    0.3049873113632202,
+                    0.08865559101104736,
+                    0.024157628417015076,
+                    1
+                ],
+                "metallicFactor" : 0,
+                "roughnessFactor" : 0.800000011920929
+            }
+        },
+        {
+            "doubleSided" : true,
+            "emissiveFactor" : [
+                0,
+                0,
+                0
+            ],
+            "name" : "Soil2",
+            "pbrMetallicRoughness" : {
+                "metallicFactor" : 0
+            }
+        },
+        {
+            "doubleSided" : true,
+            "emissiveFactor" : [
+                0,
+                0,
+                0
+            ],
+            "name" : "Cactus 2",
+            "pbrMetallicRoughness" : {
+                "metallicFactor" : 0
+            }
+        },
+        {
+            "doubleSided" : true,
+            "name" : "Cactus 2.001",
+            "pbrMetallicRoughness" : {}
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "Cylinder.2437",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 0,
+                        "NORMAL" : 1,
+                        "TEXCOORD_0" : 2
+                    },
+                    "indices" : 3,
+                    "material" : 0
+                },
+                {
+                    "attributes" : {
+                        "POSITION" : 4,
+                        "NORMAL" : 5,
+                        "TEXCOORD_0" : 6
+                    },
+                    "indices" : 7,
+                    "material" : 1
+                },
+                {
+                    "attributes" : {
+                        "POSITION" : 8,
+                        "NORMAL" : 9,
+                        "TEXCOORD_0" : 10
+                    },
+                    "indices" : 11,
+                    "material" : 2
+                },
+                {
+                    "attributes" : {
+                        "POSITION" : 12,
+                        "NORMAL" : 13,
+                        "TEXCOORD_0" : 14
+                    },
+                    "indices" : 15,
+                    "material" : 3
+                }
+            ]
+        }
+    ],
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5126,
+            "count" : 1238,
+            "max" : [
+                0.1669493019580841,
+                -0.07271476089954376,
+                0.1669493019580841
+            ],
+            "min" : [
+                -0.1669493019580841,
+                -0.39616984128952026,
+                -0.1669493019580841
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 1238,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 1238,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5123,
+            "count" : 1962,
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 4,
+            "componentType" : 5126,
+            "count" : 32,
+            "max" : [
+                0.16318602859973907,
+                -0.12987859547138214,
+                0.16318605840206146
+            ],
+            "min" : [
+                -0.16318605840206146,
+                -0.12987859547138214,
+                -0.16318601369857788
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 5,
+            "componentType" : 5126,
+            "count" : 32,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 6,
+            "componentType" : 5126,
+            "count" : 32,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 7,
+            "componentType" : 5123,
+            "count" : 90,
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 8,
+            "componentType" : 5126,
+            "count" : 1804,
+            "max" : [
+                0.10550514608621597,
+                0.22516554594039917,
+                0.10583905130624771
+            ],
+            "min" : [
+                -0.10550515353679657,
+                -0.12987865507602692,
+                -0.10302349925041199
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 9,
+            "componentType" : 5126,
+            "count" : 1804,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 10,
+            "componentType" : 5126,
+            "count" : 1804,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 11,
+            "componentType" : 5123,
+            "count" : 2766,
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 12,
+            "componentType" : 5126,
+            "count" : 90680,
+            "max" : [
+                0.11439385265111923,
+                0.23616981506347656,
+                0.1128728836774826
+            ],
+            "min" : [
+                -0.11400765925645828,
+                -0.12795628607273102,
+                -0.11432424187660217
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 13,
+            "componentType" : 5126,
+            "count" : 90680,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 14,
+            "componentType" : 5126,
+            "count" : 90680,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 15,
+            "componentType" : 5125,
+            "count" : 136020,
+            "type" : "SCALAR"
+        }
+    ],
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 14856,
+            "byteOffset" : 0
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 14856,
+            "byteOffset" : 14856
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 9904,
+            "byteOffset" : 29712
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 3924,
+            "byteOffset" : 39616
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 384,
+            "byteOffset" : 43540
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 384,
+            "byteOffset" : 43924
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 256,
+            "byteOffset" : 44308
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 180,
+            "byteOffset" : 44564
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 21648,
+            "byteOffset" : 44744
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 21648,
+            "byteOffset" : 66392
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 14432,
+            "byteOffset" : 88040
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 5532,
+            "byteOffset" : 102472
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 1088160,
+            "byteOffset" : 108004
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 1088160,
+            "byteOffset" : 1196164
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 725440,
+            "byteOffset" : 2284324
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 544080,
+            "byteOffset" : 3009764
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 3553844,
+            "uri" : "cactus2.bin"
+        }
+    ]
+}
