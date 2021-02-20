@@ -1,9 +1,9 @@
 import './styles.css'
 import * as THREE from './node_modules/three/build/three.module.js'
 import { OrbitControls } from './node_modules/three/examples/jsm/controls/OrbitControls.js'
-import * as dat from './node_modules/dat.gui'
+import * as dat from './node_modules/dat.gui/build/dat.gui.module.js'
 import { GLTFLoader } from './node_modules/three/examples/jsm/loaders/GLTFLoader.js'
-import { gsap } from './node_moduldes/gsap'
+import { gsap } from './node_moduldes/gsap/gsap-core.js'
 
 
 //====================================================================
